@@ -51,6 +51,15 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             text-align: center;
+            opacity: 0; /* Начальное состояние для анимации */
+            transform: translateY(20px); /* Начальное смещение */
+            animation: fadeInUp 0.8s forwards; /* Анимация появления */
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .faq {
             margin-top: 30px;
@@ -79,7 +88,7 @@
         a {
             color: #9932CC;
             text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s; /* Добавлена анимация для кнопок */
+            transition: color 0.3s ease, transform 0.3s; /* Добавлена анимация для ссылок */
         }
         a:hover {
             color: #DA70D6; /* Цвет при наведении */
@@ -108,17 +117,61 @@
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s, transform 0.3s;
+           
+            transition: background-color 0.3s, transform 0.3s;
         }
         .button:hover {
             background-color: #DA70D6; /* Цвет при наведении */
             transform: scale(1.05); /* Увеличение при наведении */
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Позиция всплывающей подсказки */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1; /* Показать всплывающую подсказку */
+        }
+        .animated-button {
+            position: relative;
+            overflow: hidden;
+        }
+        .animated-button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 300%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-50%) translateY(-100%);
+            transition: transform 0.5s ease;
+        }
+        .animated-button:hover:after {
+            transform: translateX(-50%) translateY(0);
         }
     </style>
 </head>
 <body>
     <header>
         <img src="0620d717-2166-4b52-a971-4380b3fc5bbf.png" alt="Логотип" />
-                <h1>Цифровое приглашение на День программиста</h1>
+        <h1>Цифровое приглашение на День программиста</h1>
     </header>
     <main>
         <h2>День программиста</h2>
@@ -134,12 +187,17 @@
         </div>
 
         <div class="button-container">
-            <a href="#subscribe" class="button">Подписаться на новости</a>
+            <div class="tooltip animated-button">
+                <a href="#subscribe" class="button">Подписаться на новости</a>
+                <span class="tooltiptext">Получайте обновления о мероприятии!</span>
+            </div>
         </div>
     </main>
     <footer>
         <p>Следите за нами в социальных сетях!</p>
+        <div class="social-icons">
+    
+        </div>
     </footer>
 </body>
 </html>
-
