@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цифровое приглашение на День программиста</title>
     <style>
-        /* Ваши стили здесь */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -34,21 +33,20 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для основного контента */
             text-align: center; /* Центрирование текста */
         }
-        .register-button {
-            background-color: #9932CC; /* Цвет кнопки */
-            color: white;
-            padding: 10px 20px; /* Увеличенные размеры кнопки */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            margin-top: 15px;
-            display: inline-block;
-            text-decoration: none; /* Убираем подчеркивание */
+        .faq {
+            margin-top: 30px;
+            text-align: left;
         }
-        .register-button:hover {
-            background-color: #DA70D6; /* Цвет кнопки при наведении */
-            transform: scale(1.05); /* Увеличение при наведении */
+        .faq h3 {
+            color: #9932CC;
+        }
+        footer {
+            background-color: #9370DB; /* Цвет футера */
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px; /* Отступ сверху для футера */
         }
     </style>
 </head>
@@ -61,8 +59,13 @@
         <p>Дата: 13 сентября 2025 года</p> <!-- Укажите дату -->
         <p>Время: 10:00 - 16:00</p> <!-- Укажите время -->
         <p>Место: <a href="https://example.com" target="_blank">Ссылка на трансляцию</a></p> <!-- Укажите место или ссылку -->
-        <p>Организаторы: Ушакова Д., Егорова О., Тимощенкова Д., Ахметзянова А. </p> <!-- Укажите название колледжа -->
-        <a href="registration.html" class="register-button">Зарегистрироваться</a> <!-- Ссылка на страницу регистрации -->
+        <p>Организаторы: Ушакова Д., Егорова О., Тимощенкова Д., Ахметзянова А.</p> <!-- Укажите название колледжа -->
+
+        <div class="faq">
+            <h3>Часто задаваемые вопросы</h3>
+            <p><strong>1. Что такое День программиста?</strong><br>Это праздник, который отмечается каждый год в 256-й день года, что соответствует 13 сентября (или 12 сентября в високосные годы).</p>
+            <p><strong>2. Какова цель мероприятия?</strong><br>Цель мероприятия — отметить достижения программистов и обсудить актуальные темы в области программирования.</p>
+        </div>
     </main>
     <footer>
         <p>Следите за нами в социальных сетях!</p>
